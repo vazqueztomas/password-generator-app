@@ -11,13 +11,4 @@ const Checkbox = ({ label }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    width: "100%",
-    marginLeft: 10,
-  },
-});
 export default Checkbox;

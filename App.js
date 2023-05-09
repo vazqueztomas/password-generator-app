@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import PasswordGenerator from "./src/components/PasswordGenerator";
+import { SafeAreaView } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Password generator</Text>
       <View style={styles.passwordContainer}>
         <Text>Aca iria la password</Text>
@@ -12,7 +13,7 @@ export default function App() {
 
       <PasswordGenerator />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 

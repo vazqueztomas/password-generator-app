@@ -2,15 +2,15 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import React, { useState } from "react";
 import { Slider } from "@miblanchard/react-native-slider";
 import Checkbox from "./Checkbox";
+import { SafeAreaView } from "react-native";
 
 const PasswordGenerator = () => {
   const [length, setLength] = useState(6);
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.title}>PasswordGenerator</Text>
-        <Text>{length}</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.amountDiv}>
+        <Text style={styles.amount}>{length}</Text>
       </View>
       <Slider
         value={length}
@@ -34,7 +34,7 @@ const PasswordGenerator = () => {
       <Pressable style={styles.button}>
         <Text style={styles.buttonText}>GENERATE</Text>
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -46,8 +46,21 @@ const styles = StyleSheet.create({
     height: "50%",
     justifyContent: "center",
   },
+  amountDiv: {
+    flex: 1,
+    flexWrap: "nowrap",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
   title: {
-    textAlign: "center",
+    color: "white",
+  },
+  amount: {
+    textAlign: "end",
+    color: "orange",
+    fontWeight: "bold",
+    marginRight: 20,
+    marginTop: 5,
   },
   characterLenght: {
     color: "black",
@@ -61,14 +74,13 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 12,
+    paddingVertical: 10,
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "gray",
     borderWidth: 1,
     borderColor: "orange",
-    marginHorizontal: 20,
   },
   buttonText: {
     fontSize: 16,
