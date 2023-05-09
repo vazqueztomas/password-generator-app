@@ -2,11 +2,12 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-const Checkbox = ({ label }) => {
+const Checkbox = ({ label, setInclude }) => {
   return (
     <BouncyCheckbox
       text={label}
-      textStyle={{ color: "white", textDecorationLine: "none" }}
+      textStyle={{ color: "black", textDecorationLine: "none" }}
+      onPress={isChecked => setInclude(isChecked)}
     />
   );
 };
